@@ -13,7 +13,7 @@
 
 ## 📋 Descripción del Proyecto
 
-Este repositorio contiene mi solución a la práctica de **Fundamentos de Álgebra**, donde implemento funciones en JavaScript para resolver problemas de álgebra básica, preparándome para trabajar con operaciones matriciales más complejas.
+Este repositorio contiene mi solución a la práctica de **Fundamentos de Álgebra**, donde implemento funciones para manipular imágenes representadas como matrices de píxeles en JavaScript. La práctica abarca desde operaciones básicas como ajuste de brillo e inversión de colores, hasta transformaciones geométricas y filtros avanzados como sepia y detección de bordes.
 
 ## 🎯 Objetivos Alcanzados
 
