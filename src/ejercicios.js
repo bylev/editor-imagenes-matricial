@@ -351,11 +351,12 @@ function convertirEscalaGrises(matriz) {
  */
 function voltearHorizontal(matriz) {
   // TODO: Implementar volteo horizontal
+
+  // Crea una ma triz para el resultado y la llena invirtiendo cada fila
+  const resultado = matriz.map(fila => fila.slice().reverse());
   
-  // Pista: Puedes usar .reverse() en cada fila
-  // o construir manualmente invirtiendo el orden
-  
-  return []; // REEMPLAZAR
+  return resultado; // Devuelve la matriz resultante
+ 
 }
 
 /**
