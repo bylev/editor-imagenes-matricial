@@ -206,7 +206,7 @@ function invertirColores(matriz) {
 - [Stack Overflow](https://stackoverflow.com)
 - [W3 Schools](https://www.w3schools.com/js/)
 - [¿Qué es el map en JavaScript?](https://www.youtube.com/watch?v=33-JeJewSCc)
-- Guía del estudiante incluida en el repositorio
+
 
 ---
 
