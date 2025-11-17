@@ -486,8 +486,30 @@ function mezclarImagenes(matriz1, matriz2, factor) {
  */
 function aplicarSepia(matriz) {
   // TODO: Implementar filtro sepia
-  
-  return []; // REEMPLAZAR
+
+  // Crea una nueva matriz para el resultado
+  const resultado = crearMatrizVacia(matriz.length, matriz[0].length);
+
+  // Recorre cada pixel y aplica la transformación sepia
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+      const pixel = matriz[i][j];
+
+      // Calcula los nuevos valores con la fórmula sepia
+      const rNuevo = limitarValorColor(Math.round(0.393 * pixel.r + 0.769 * pixel.g + 0.189 * pixel.b));
+      const gNuevo = limitarValorColor(Math.round(0.349 * pixel.r + 0.686 * pixel.g + 0.168 * pixel.b));
+      const bNuevo = limitarValorColor(Math.round(0.272 * pixel.r + 0.534 * pixel.g + 0.131 * pixel.b));
+
+      // Asigna el nuevo pixel sepia
+      resultado[i][j] = {
+        r: rNuevo,
+        g: gNuevo,
+        b: bNuevo,
+        a: pixel.a 
+      };
+    }
+  }
+  return resultado; // Devuelve la matriz resultante
 }
 
 /**
