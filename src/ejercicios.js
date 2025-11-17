@@ -377,7 +377,10 @@ function voltearHorizontal(matriz) {
 function voltearVertical(matriz) {
   // TODO: Implementar volteo vertical
   
-  return []; // REEMPLAZAR
+  // 
+  const resultado = matriz.slice().reverse();
+  
+  return resultado; // Devuelve la matriz resultante
 }
 
 /**
