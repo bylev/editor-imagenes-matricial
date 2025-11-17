@@ -243,6 +243,7 @@ function ajustarBrillo(matriz, factor) {
   }
   return resultado; // Devuelve la matriz resultante
 }
+
 /**
  * Ejercicio 2.2: Invertir colores (8 puntos)
  * 
@@ -264,7 +265,31 @@ function ajustarBrillo(matriz, factor) {
 function invertirColores(matriz) {
   // TODO: Implementar inversión de colores
   
-  return []; // REEMPLAZAR
+  //Crea matriz vacía
+  const matrizInvertida  = [];
+
+  // Recorre cada fila de la matriz.
+  for(let y = 0; y < matriz.length; y++){
+    const filaOriginal = matriz[y];
+    const filaInvertida =[];
+
+    // Recorre cada pixel de la fila.
+    for(let x=0; x< filaOriginal.length; x++){
+      const pixel = filaOriginal[x];
+
+      //Crea un nuevo pixel con los colores invertidos.
+      const pixelInvertido = {
+        r: 255 - pixel.r,
+        g: 255 - pixel.g, 
+        b: 255 - pixel.b,
+        a: pixel.a
+      };
+      filaInvertida.push(pixelInvertido);
+    }
+    matrizInvertida.push(filaInvertida);
+  }
+  //Devuelve la matriz con los colores invertidos.
+  return matrizInvertida; 
 }
 
 /**
