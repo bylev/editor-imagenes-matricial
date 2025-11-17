@@ -226,22 +226,23 @@ function obtenerDimensionesImagen(rutaImagen) {
 function ajustarBrillo(matriz, factor) {
   // TODO: Implementar ajuste de brillo
   
-  // 1. Crear matriz resultado
-  // const resultado = copiarMatriz(matriz);
-  
-  // 2. Para cada pixel, multiplicar R, G, B por el factor
-  // for (let i = 0; i < resultado.length; i++) {
-  //   for (let j = 0; j < resultado[i].length; j++) {
-  //     resultado[i][j].r = limitarValorColor(matriz[i][j].r * factor);
-  //     resultado[i][j].g = limitarValorColor(matriz[i][j].g * factor);
-  //     resultado[i][j].b = limitarValorColor(matriz[i][j].b * factor);
-  //     // El canal alpha NO se modifica
-  //   }
-  // }
-  
-  return []; // REEMPLAZAR
-}
+  // Crea una nueva matriz para el resultado
+  const resultado = crearMatrizVacia(matriz.length, matriz[0].length);
 
+  // Recorre cada pixel y ajusta el brillo
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+      const pixel = matriz[i][j];
+      resultado[i][j] = {
+        r: limitarValorColor(Math.round(pixel.r * factor)),
+        g: limitarValorColor(Math.round(pixel.g * factor)),
+        b: limitarValorColor(Math.round(pixel.b * factor)),
+        a: pixel.a // Mantiene el canal alpha igual
+      };
+    }
+  }
+  return resultado; // Devuelve la matriz resultante
+}
 /**
  * Ejercicio 2.2: Invertir colores (8 puntos)
  * 
