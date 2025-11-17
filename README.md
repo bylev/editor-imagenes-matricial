@@ -83,8 +83,8 @@ Este repositorio contiene mi solución a la práctica de **Fundamentos de Álgeb
 
 ### Clonar el repositorio
 ```bash
-git clone https://github.com/TU-USUARIO/fundamentos-programacion-practica-1.git
-cd fundamentos-programacion-practica-1
+git clone https://github.com/TU-USUARIO/editor-imagenes-matricial.git
+cd editor-imagenes-matricial
 ```
 
 ### Instalar dependencias
