@@ -110,41 +110,29 @@ function imagenAMatriz(rutaImagen) {
 function matrizAImagen(matriz, rutaSalida) {
   // TODO: Implementar la conversión de matriz a PNG
   
-  // 1. Validar la matriz
-  // validarMatriz(matriz);
-  
-  // 2. Obtener dimensiones
-  // const dims = obtenerDimensiones(matriz);
-  
-  // 3. Crear el PNG
-  // const png = new PNG({
-  //   width: dims.columnas,
-  //   height: dims.filas
-  // });
-  
-  // 4. Llenar png.data
-  // for (let y = 0; y < dims.filas; y++) {
-  //   for (let x = 0; x < dims.columnas; x++) {
-  //     const idx = (dims.columnas * y + x) << 2;
-  //     const pixel = matriz[y][x];
-  //     
-  //     png.data[idx] = limitarValorColor(pixel.r);
-  //     png.data[idx + 1] = limitarValorColor(pixel.g);
-  //     png.data[idx + 2] = limitarValorColor(pixel.b);
-  //     png.data[idx + 3] = limitarValorColor(pixel.a);
-  //   }
-  // }
-  
-  // 5. Asegurar que existe el directorio de salida
-  // asegurarDirectorio(path.dirname(rutaSalida));
-  
-  // 6. Guardar el archivo
-  // const buffer = PNG.sync.write(png);
-  // fs.writeFileSync(rutaSalida, buffer);
-  
-  // ESCRIBE TU CÓDIGO AQUÍ
-}
+  // Dimensiones de la matriz 
+  const alto = matriz.length;
+  const ancho = matriz[0].length;
 
+// Crea la imagen PNG, rellena los datos y guarda el archivo
+  const png = new PNG({ width: ancho, height: alto });
+  for (let y = 0; y < alto; y++) {
+    for (let x = 0; x < ancho; x++) {
+      const idx = (png.width * y + x) << 2; // equivalente a *4
+      const pixel = matriz[y][x];
+      png.data[idx] = pixel.r;
+      png.data[idx + 1] = pixel.g;
+      png.data[idx + 2] = pixel.b;
+      png.data[idx + 3] = pixel.a;
+    }
+  }
+
+  // Genera el buffer y guarda el archivo
+  const buffer = PNG.sync.write(png);
+  asegurarDirectorio(path.dirname(rutaSalida));
+  fs.writeFileSync(rutaSalida, buffer);
+
+}
 /**
  * Ejercicio 1.3: Obtener un canal específico de color (5 puntos)
  * 
